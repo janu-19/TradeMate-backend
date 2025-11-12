@@ -14,7 +14,10 @@ const app = express();
 
 // CORS configuration - automatically handles OPTIONS preflight requests
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite default port
+  origin: [
+    'http://localhost:5173', // Local development
+    'https://trademate-dashboard-3.onrender.com' // Deployed dashboard
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
