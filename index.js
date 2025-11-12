@@ -15,8 +15,10 @@ const app = express();
 // CORS configuration - automatically handles OPTIONS preflight requests
 app.use(cors({
   origin: [
-    'http://localhost:5173', // Local development
-    'https://trademate-dashboard-3.onrender.com' // Deployed dashboard
+    'http://localhost:5173', // Local dashboard development
+    'http://localhost:3000', // Local frontend development
+    'https://trademate-dashboard-3.onrender.com', // Deployed dashboard
+    'https://trademate-frontend.onrender.com' // Deployed frontend
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
